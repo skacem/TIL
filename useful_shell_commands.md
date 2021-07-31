@@ -42,3 +42,44 @@ Use `!n` to execute the nth command
 $ !20
 $ less /var/log/system.log
 ```
+
+Display your 10 common bash commands
+```bash
+history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10
+```
+     1  94  18.8%  vim
+     2  83  16.6%  g++
+     3  77  15.4%  ls
+     4  69  13.8%  cd
+     5  11  2.2%   ps
+     6  10  2%     man
+     7  8   1.6%   git 
+     8  6   1.2%   conda 
+     9  5   1%     cp
+    10  4   0.8%   ssh
+
+Use `!:n` to get the nth parameter from a previous command
+```bash
+$ touch foo.py bar.py main.py
+$ atom !:3
+$ atom main.py
+```
+### macOSX
+
+Get your external IP address:  
+```bash
+$ curl ifconfig.me
+```
+Get network IP:
+```bash
+ipconfig getifaddr en0
+```
+Open finder at place from terminal:
+```bash
+open .
+```
+Make your mac os read(verbally) a text file
+```bash
+say -f /path/to/file.txt
+```
+
