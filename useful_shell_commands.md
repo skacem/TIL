@@ -110,3 +110,49 @@ $ atom session0.ipynb session1.ipynb session2.ipynb
 ```bash
 $ wget  https://ocw.mit.edu/resources/Strang/Chapter{1..6}.pdf
 ```
+# Misc
+
+Use bash variables to save important information
+```bash
+$ APIx_TOKEN=ldjehdke203k35
+$ echo $APIx_TOKEN
+ldjehdke203k35
+```
+
+Display the top ten running processes sorted by memory usage
+```bash
+$ ps aux | sort -nk +4 | tail
+```
+
+Kill a process that is locking a file
+```bash
+$ fuser -k filename
+```
+
+Make the permission of `file2` the same as `file1`
+```bash
+$ chmod --reference file1 file2
+```
+
+Start CMND, and kill it if still running after 5 seconds
+```bash
+$ timeout 5s CMND
+```
+
+Remember yourself to leave after 15min
+```bash
+$ leave +15
+```
+Which program does this port belong to?
+```bash
+$ lsof -i tcp:8888
+```
+Find all files larger than 500M
+```bash
+$ find / -type f -size +500M
+```
+
+Display last exit status of a command
+```bash
+$ echo $?
+```
