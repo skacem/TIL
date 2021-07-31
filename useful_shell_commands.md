@@ -17,26 +17,40 @@ $ conda env list
 ## To Forget History Is to Repeat It
 
 Save commands to history without executing it
-```bash
+```shell
 history -s <you-command>
 ```
 
 Use `Ctrl + r` to reverse search history commands
-```bash
+```shell
 bck-i-search: _
 ```
 Use `!!` to execute the previous command, by adding `sudo` at the beginning you run the previous command as root
-```bash
-
+```shell
 $ apt-get install conda
 $ sudo !!
 $ sudo apt-get install conda
 ```
+
+Use `!$` to get the last parameter of the previous command
+```shell
+$ mkdir pictures
+$ cd !$
+```
+
+
+Use `:h` to select the beginning of the path
+```bash
+$ touch /Workspace/github/repo1/session0.ipynb
+$ cd !$:h && jupyter lab
+```
+
 Use `!?foo` to execute a command containing foo
 ```bash
 $ !?Chrome
 $ /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app=http://127.0.0.1\?token\=
 ```
+
 Use `!n` to execute the nth command
 ```bash
 $ !20
@@ -64,7 +78,8 @@ $ touch foo.py bar.py main.py
 $ atom !:3
 $ atom main.py
 ```
-### macOSX
+
+## macOSX
 
 Get your external IP address:  
 ```bash
@@ -82,4 +97,16 @@ Make your mac os read(verbally) a text file
 ```bash
 say -f /path/to/file.txt
 ```
-
+## DRY
+Use {} to construct strings
+```bash
+$ cp file.tex{,.bak}
+$ cp file.tex file.tex.bak
+```
+```bash
+$ atom session{0..2}.ipynb
+$ atom session0.ipynb session1.ipynb session2.ipynb
+```
+```bash
+$ wget  https://ocw.mit.edu/resources/Strang/Chapter{1..6}.pdf
+```
