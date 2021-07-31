@@ -138,18 +138,24 @@ Start CMND, and kill it if still running after 5 seconds
 ```bash
 $ timeout 5s CMND
 ```
-
 Remember yourself to leave after 15min
 ```bash
 $ leave +15
 ```
+
 Which program does this port belong to?
 ```bash
 $ lsof -i tcp:8888
 ```
+
 Find all files larger than 500M
 ```bash
 $ find / -type f -size +500M
+```
+
+Find all files larger than 500M  and less than 1GB
+```bash
+$ find / -type -f -size +500M -size -1G
 ```
 
 Display last exit status of a command
