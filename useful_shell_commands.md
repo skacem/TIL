@@ -138,6 +138,7 @@ Start CMND, and kill it if still running after 5 seconds
 ```bash
 $ timeout 5s CMND
 ```
+
 Remember yourself to leave after 15min
 ```bash
 $ leave +15
